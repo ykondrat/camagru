@@ -1,11 +1,31 @@
 .room {
     padding-top: 10px;
-    margin-left: 210px;
+    margin-left: 10px;
     width: 420px;
+    float: left;
 }
-#take_it {
+.photo_div {
+    /*position: absolute;*/
+    width: 40%;
+    /*left: 650px;*/
+    /*top: 10px;*/
+    float: left;
+    /*display: inline-block;*/
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.user_photo {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#take_it, #save_it, #cancel_it {
     width: 400px;
     display: none;
+    margin-left: 0;
 }
 
 #canvas {
@@ -17,18 +37,15 @@
     -ms-transform: scaleX(-1);
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
+    width: 400px;
+    height:300px;
 }
-#helmet, #wars {
+#helmet, #wars, #leo {
     width: 100px;
     height: 100px;
     margin-right: 5px;
 }
-#vader {
-    width: 100px;
-    height: 143px;
-    margin-right: 5px;
-}
-#vader:hover, #helmet:hover, #wars:hover {
+#leo:hover, #helmet:hover, #wars:hover {
     cursor: pointer;
 }
 .items {
@@ -38,6 +55,13 @@
 #video_img {
     position: absolute;
     top: 25px;
+    left: 300px;
+    width: 200px;
+    height: 200px;
+}
+#done_img {
+    position: absolute;
+    top: 330px;
     left: 300px;
     width: 200px;
     height: 200px;

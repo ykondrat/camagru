@@ -1,4 +1,4 @@
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 625px) {
     .account_form{
         max-width: 300px;
     }
@@ -30,9 +30,56 @@
     .about_item {
         display: block;
     }
+    .room {
+        margin-left: 10px;
+        width: 210px;
+    }
+    #take_it, #save_it, #cancel_it {
+        width: 200px;
+    }
+    #helmet, #wars, #leo {
+        width: 50px;
+        height: 50px;
+    }
+    #video_img {
+        top: 25px;
+        left: 140px;
+        width: 100px;
+        height: 100px;
+    }
+    #done_img {
+        position: absolute;
+        top: 180px;
+        left: 140px;
+        width: 100px;
+        height: 100px;
+    }
+    #video,#photo, #canvas {
+        width: 200px;
+        height: 150px;
+    }
+    /*.user_photo {*/
+        /*width: 100px;*/
+        /*height: 75px;*/
+    /*}*/
+
 }
-@media only screen and (max-width: 625px) {
-    .btn-modify {
-        max-width: 250px;
+@media only screen and (max-width: 1024px) {
+    .user_photo {
+        width: 100px;
+        height: 75px;
+    }
+    .photo_div {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .photo_div {
+        width: 15%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .photo_div {
+        width: 60%;
     }
 }
