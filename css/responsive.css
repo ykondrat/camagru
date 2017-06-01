@@ -1,0 +1,38 @@
+@media only screen and (max-width: 500px) {
+    .account_form{
+        max-width: 300px;
+    }
+    span {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    nav {
+        width: 45px;
+        padding-right: 20px;
+        -webkit-box-shadow: inset -9px 2px 10px -5px darkgray;
+        -moz-box-shadow: inset -9px 2px 10px -5px darkgray;
+        box-shadow: inset -9px 2px 10px -5px darkgray;
+    }
+    .menu_list {
+        width: 40px;
+    }
+    #avatar {
+        margin-left: -8px;
+        width: 60px;
+        height: 60px;
+    }
+    #nick_name {
+        display: block;
+        margin-left: -9px;
+    }
+    .about_item {
+        display: block;
+    }
+}
+@media only screen and (max-width: 625px) {
+    .btn-modify {
+        max-width: 250px;
+    }
+}

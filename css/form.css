@@ -1,0 +1,80 @@
+.account_form {
+    max-width: 500px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    font-family: 'Play', sans-serif;
+}
+.account_form fieldset{
+    padding-left: 10px;
+    border: none;
+}
+.account_form legend {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.account_form input[type="text"],
+.account_form input[type="email"],
+.account_form input[type="password"] {
+    font-family: 'Play', sans-serif;
+    background: #909090;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 5px 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    color: #FFF;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+.account_form input[type="text"]:focus,
+.account_form input[type="email"]:focus,
+.account_form input[type="password"]:focus {
+    background: #404040;
+}
+.account_form input[type="submit"] {
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+    position: relative;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 5px auto;
+    background: #646464;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border-radius: 24px 24px 24px 24px;
+    -moz-border-radius: 24px 24px 24px 24px;
+    -webkit-border-radius: 24px 24px 24px 24px;
+    border: none;
+}
+.account_form input[type="submit"]:hover {
+    cursor: pointer;
+    background: #909090;
+}
+.error_div {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Play', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #D78A8A;
+}
+.success_div {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Play', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8AD790;
+}

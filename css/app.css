@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url(../img/background.png) repeat;
+}
+.container {
+    margin: 0;
+    text-align: center;
+}
+#avatar {
+    margin-top: 10px;
+    border: none;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+#avatar:hover {
+    cursor: pointer;
+}
+#delete_avatar:hover {
+    background-color: #D78A8A;
+}
+#nick_name {
+    margin-left: 40px;
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+}
+footer {
+    font-family: 'Play', sans-serif;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 95%;
+    height: 30px;
+}
+.about {
+    font-family: 'Play', sans-serif;
+    padding-top: 10px;
+}
+.about h1 {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 5px 5px;
+}
+.about p {
+    margin: 5px 5px;
+    font-size: 24px;
+}
+.about a {
+    color: #404040;
+}
+.about a:hover {
+    color: #646464;
+}
+.about_item {
+    font-weight: bold;
+    padding-right: 5px;
+}
