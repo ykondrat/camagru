@@ -9,7 +9,7 @@
         mkdir($dir, 0777, true);
     }
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "sarkazm1312");
+        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "");
     } catch (PDOException $e) {
         echo "Connection error :". $e->getMessage();
         exit();
@@ -23,34 +23,59 @@
         exit();
     }
 
-    $photo = str_replace('data:image/png;base64,', '', $photo);
-    $photo = str_replace(' ', '+', $photo);
-    $photo = base64_decode($photo);
+    if ($photo == './photo/'.$login.'/'.$login.".png") {
+        $activ = "SELECT photo_id FROM photo_user WHERE path = '$photo'";
+        $result = $pdo->prepare($activ);
+        $result->execute();
+        $id = $result->fetch(PDO::FETCH_ASSOC);
+        $id = $id['photo_id'];
 
-    $sql = "INSERT INTO photo_user (login) VALUES (?)";
-    $result = $pdo->prepare($sql);
-    $result->execute([$login]);
+        $activ = "UPDATE photo_user SET path = './photo/$login/$id.png' WHERE photo_id = '$id'";
+        $result = $pdo->prepare($activ);
+        $result->execute();
+        rename("../photo/$login/$login.png", "../photo/$login/$id.png");
 
-    $activ = "SELECT MAX(photo_id) FROM photo_user";
-    $result = $pdo->prepare($activ);
-    $result->execute();
-    $id = $result->fetch(PDO::FETCH_ASSOC);
-    $n = $id['MAX(photo_id)'];
+        $Image = ImageCreateFromPNG("../photo/$login/$id.png");
+        $logo = ImageCreateFromPNG(".".$png);
 
-    $activ = "UPDATE photo_user SET path = './photo/$login/$n.png' WHERE photo_id = '$n'";
-    $result = $pdo->prepare($activ);
-    $result->execute();
-    file_put_contents("../photo/$login/$n.png", $photo);
+        if ($png == "./png/helmet.png")
+            ImageCopy($Image, $logo, 88, 25, 0, 0, 200, 187);
+        elseif ($png == "./png/leo.png")
+            ImageCopy($Image, $logo, 88, 15, 0, 0, 200, 200);
+        elseif ($png == "./png/wars.png")
+            ImageCopy($Image, $logo, 88, 20, 0, 0, 200, 200);
 
-    $Image = ImageCreateFromPNG("../photo/$login/$n.png");
-    $logo = ImageCreateFromPNG(".".$png);
+        imagepng($Image, "../photo/$login/$id.png");
+    } else {
+        $photo = str_replace('data:image/png;base64,', '', $photo);
+        $photo = str_replace(' ', '+', $photo);
+        $photo = base64_decode($photo);
 
-    if ($png == "./png/helmet.png")
-        ImageCopy($Image, $logo, 88, 25, 0, 0, 200, 187);
-    elseif ($png == "./png/leo.png")
-        ImageCopy($Image, $logo, 88, 15, 0, 0, 200, 200);
-    elseif ($png == "./png/wars.png")
-        ImageCopy($Image, $logo, 88, 20, 0, 0, 200, 200);
+        $sql = "INSERT INTO photo_user (login) VALUES (?)";
+        $result = $pdo->prepare($sql);
+        $result->execute([$login]);
 
-    imagepng($Image, "../photo/$login/$n.png");
+        $activ = "SELECT MAX(photo_id) FROM photo_user";
+        $result = $pdo->prepare($activ);
+        $result->execute();
+        $id = $result->fetch(PDO::FETCH_ASSOC);
+        $n = $id['MAX(photo_id)'];
+
+        $activ = "UPDATE photo_user SET path = './photo/$login/$n.png' WHERE photo_id = '$n'";
+        $result = $pdo->prepare($activ);
+        $result->execute();
+        file_put_contents("../photo/$login/$n.png", $photo);
+
+        $Image = ImageCreateFromPNG("../photo/$login/$n.png");
+        $logo = ImageCreateFromPNG(".".$png);
+
+        if ($png == "./png/helmet.png")
+            ImageCopy($Image, $logo, 88, 25, 0, 0, 200, 187);
+        elseif ($png == "./png/leo.png")
+            ImageCopy($Image, $logo, 88, 15, 0, 0, 200, 200);
+        elseif ($png == "./png/wars.png")
+            ImageCopy($Image, $logo, 88, 20, 0, 0, 200, 200);
+
+        imagepng($Image, "../photo/$login/$n.png");
+    }
 

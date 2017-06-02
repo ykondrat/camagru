@@ -40,18 +40,18 @@
             }
         ?>
         <ul class="menu">
-            <li class="menu_list"><a href="http://localhost:8080/camagru"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span>&nbsp; Home</span></a></li>
+            <li class="menu_list"><a href="http://localhost/camagru"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span>&nbsp; Home</span></a></li>
             <?php
                 if ($_SESSION['logged_user'] === "") {
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/sign_up'><i class=\"fa fa-user-plus fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign Up</span></a></li>";
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/login'><i class=\"fa fa-sign-in fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign In</span></a></li>";
+                    echo "<li class=\"menu_list\"><a href='http://localhost/camagru/sign_up'><i class=\"fa fa-user-plus fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign Up</span></a></li>";
+                    echo "<li class=\"menu_list\"><a href='http://localhost/camagru/login'><i class=\"fa fa-sign-in fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign In</span></a></li>";
                 } else {
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/modify'><i class=\"fa fa-user-circle-o fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Modify Account</span></a></li>";
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/logout'><i class=\"fa fa-sign-out fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Log Out</span></a></li>";
+                    echo "<li class=\"menu_list\"><a href='http://localhost/camagru/modify'><i class=\"fa fa-user-circle-o fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Modify Account</span></a></li>";
+                    echo "<li class=\"menu_list\"><a href='http://localhost/camagru/logout'><i class=\"fa fa-sign-out fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Log Out</span></a></li>";
                 }
             ?>
-            <li class="menu_list"><a href="http://localhost:8080/camagru/photo_room"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i><span>&nbsp; Photo Room</span></a></li>
-            <li class="menu_list"><a href="http://localhost:8080/camagru/about"><i class="fa fa-book fa-2x" aria-hidden="true"></i><span>&nbsp; About</span></a></li>
+            <li class="menu_list"><a href="http://localhost/camagru/photo_room"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i><span>&nbsp; Photo Room</span></a></li>
+            <li class="menu_list"><a href="http://localhost/camagru/about"><i class="fa fa-book fa-2x" aria-hidden="true"></i><span>&nbsp; About</span></a></li>
         </ul>
     </nav>
     <div id="upload" class="modal_window">

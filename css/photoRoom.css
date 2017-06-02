@@ -21,6 +21,7 @@
     height: 150px;
     margin-bottom: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 #take_it, #save_it, #cancel_it {
     width: 400px;

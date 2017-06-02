@@ -13,6 +13,7 @@
 
         public static function photoRoom() {
             self::setAvatar();
+            self::uploadPhoto();
             require_once (ROOT.'/view/viewPhotoRoom.php');
         }
 
@@ -80,6 +81,55 @@
 
                         $query = $pdo->prepare("DELETE FROM `avatar` WHERE login = '$login'");
                         $query->execute();
+                    }
+                }
+            }
+        }
+
+        public static function uploadPhoto() {
+            if (isset($_POST['set_photo'])) {
+                if ($_POST['set_photo'] == "Send") {
+                    $queryPath = ROOT.'/config/querySQL.php';
+                    $querySQL = include($queryPath);
+
+                    $pdo = DataBase::getConnection();
+                    DataBase::createTable('photo');
+                    $login = $_SESSION['logged_user'];
+
+                    $target_dir = ROOT.'/photo/'.$login.'/';
+                    $type = explode(".", $_FILES["photoToUpload"]["name"]);
+                    $len = count($type) - 1;
+                    $_FILES["photoToUpload"]["name"] = $login.".png";
+                    $target_file = $target_dir.basename($_FILES["photoToUpload"]["name"]);
+                    $path = './photo/'.$login.'/'.$_FILES["photoToUpload"]["name"];
+
+                    $query = $pdo->prepare("SELECT * FROM `photo_user` WHERE path = '$path'");
+                    $query->execute();
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+                    if ($type[$len] == "jpg" || $type[$len] == "png" || $type[$len] == "jpeg" || $type[$len] == "gif") {
+                        if ($_FILES["photoToUpload"]["size"] <= 500000) {
+                            if ($result == NULL) {
+                                $query = $pdo->prepare("INSERT INTO `photo_user` (login, path) VALUES (?, ?)");
+                                $query->execute([$login, $path]);
+
+                                move_uploaded_file($_FILES["photoToUpload"]["tmp_name"], $target_file);
+                            } else {
+                                $old_path = $result[0]['path'];
+
+                                $query = $pdo->prepare("UPDATE `photo_user` SET path = '$path' WHERE path = '$path'");
+                                $query->execute();
+
+                                $old_path = explode("/", $old_path);
+                                $path = "/".$old_path[1]."/".$old_path[2]."/".$old_path[3];
+                                unlink(ROOT.$path);
+                                move_uploaded_file($_FILES["photoToUpload"]["tmp_name"], $target_file);
+                            }
+                        } else {
+                            $_SESSION['error'] = "error9";
+                        }
+                    } else {
+                        $_SESSION['error'] = "error8";
                     }
                 }
             }

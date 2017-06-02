@@ -61,77 +61,114 @@
     var wars = document.getElementById('wars');
 
     helmet.onclick = function (){
-        document.getElementById('take_it').style.display = "block";
         var elem = document.createElement('img');
         var video = document.getElementById('video');
         var videoImg = document.getElementById('video_img');
         var done_img = document.getElementById('done_img');
         var photo_item = document.getElementById('photo');
-        photo_item.setAttribute("src", "./photo/avatar/user_avatar.png");
+        var nick = document.getElementById('nick_name').innerText;
+        var cmp = photo_item.getAttribute('src').localeCompare('./photo/' + nick + '/' + nick + '.png');
 
-        document.getElementById('save_it').style.display = "none";
-        document.getElementById('cancel_it').style.display = "none";
-        if (videoImg) {
-            videoImg.parentElement.removeChild(videoImg);
-        }
         if (done_img) {
             done_img.parentElement.removeChild(done_img);
         }
-        elem.setAttribute('src', helmet.getAttribute('src'));
-        elem.setAttribute('id', 'video_img');
+        if (cmp == 0) {
+            elem.setAttribute('src', helmet.getAttribute('src'));
+            elem.setAttribute('id', 'done_img');
+            insertAfter(elem, photo_item);
+            document.getElementById('save_it').style.display = "block";
+            document.getElementById('cancel_it').style.display = "block";
 
-        insertAfter(elem, video);
+        } else {
+            document.getElementById('take_it').style.display = "block";
+            document.getElementById('save_it').style.display = "none";
+            document.getElementById('cancel_it').style.display = "none";
+
+            if (videoImg) {
+                videoImg.parentElement.removeChild(videoImg);
+            }
+            photo_item.setAttribute('src', './photo/avatar/user_avatar.png');
+            elem.setAttribute('src', helmet.getAttribute('src'));
+            elem.setAttribute('id', 'video_img');
+
+            insertAfter(elem, video);
+        }
     };
 
     leo.onclick = function (){
-        document.getElementById('take_it').style.display = "block";
         var elem = document.createElement('img');
         var video = document.getElementById('video');
         var videoImg = document.getElementById('video_img');
         var done_img = document.getElementById('done_img');
         var photo_item = document.getElementById('photo');
-        photo_item.setAttribute("src", "./photo/avatar/user_avatar.png");
+        var nick = document.getElementById('nick_name').innerText;
+        var cmp = photo_item.getAttribute('src').localeCompare('./photo/' + nick + '/' + nick + '.png');
 
-        document.getElementById('save_it').style.display = "none";
-        document.getElementById('cancel_it').style.display = "none";
-        if (videoImg) {
-            videoImg.parentElement.removeChild(videoImg);
-        }
         if (done_img) {
             done_img.parentElement.removeChild(done_img);
         }
-        elem.setAttribute('src', leo.getAttribute('src'));
-        elem.setAttribute('id', 'video_img');
+        if (cmp == 0) {
+            elem.setAttribute('src', leo.getAttribute('src'));
+            elem.setAttribute('id', 'done_img');
+            insertAfter(elem, photo_item);
+            document.getElementById('save_it').style.display = "block";
+            document.getElementById('cancel_it').style.display = "block";
 
-        insertAfter(elem, video);
+        } else {
+            document.getElementById('take_it').style.display = "block";
+            document.getElementById('save_it').style.display = "none";
+            document.getElementById('cancel_it').style.display = "none";
+
+            if (videoImg) {
+                videoImg.parentElement.removeChild(videoImg);
+            }
+            photo_item.setAttribute('src', './photo/avatar/user_avatar.png');
+            elem.setAttribute('src', leo.getAttribute('src'));
+            elem.setAttribute('id', 'video_img');
+
+            insertAfter(elem, video);
+        }
     };
 
 
     wars.onclick = function (){
-        document.getElementById('take_it').style.display = "block";
         var elem = document.createElement('img');
         var video = document.getElementById('video');
         var videoImg = document.getElementById('video_img');
         var done_img = document.getElementById('done_img');
         var photo_item = document.getElementById('photo');
-        photo_item.setAttribute("src", "./photo/avatar/user_avatar.png");
+        var nick = document.getElementById('nick_name').innerText;
+        var cmp = photo_item.getAttribute('src').localeCompare('./photo/' + nick + '/' + nick + '.png');
 
-        document.getElementById('save_it').style.display = "none";
-        document.getElementById('cancel_it').style.display = "none";
-        if (videoImg) {
-            videoImg.parentElement.removeChild(videoImg);
-        }
         if (done_img) {
             done_img.parentElement.removeChild(done_img);
         }
-        elem.setAttribute('src', wars.getAttribute('src'));
-        elem.setAttribute('id', 'video_img');
-        insertAfter(elem, video);
+        if (cmp == 0) {
+            elem.setAttribute('src', wars.getAttribute('src'));
+            elem.setAttribute('id', 'done_img');
+            insertAfter(elem, photo_item);
+            document.getElementById('save_it').style.display = "block";
+            document.getElementById('cancel_it').style.display = "block";
+
+        } else {
+            document.getElementById('take_it').style.display = "block";
+            document.getElementById('save_it').style.display = "none";
+            document.getElementById('cancel_it').style.display = "none";
+
+            if (videoImg) {
+                videoImg.parentElement.removeChild(videoImg);
+            }
+            photo_item.setAttribute('src', './photo/avatar/user_avatar.png');
+            elem.setAttribute('src', wars.getAttribute('src'));
+            elem.setAttribute('id', 'video_img');
+            insertAfter(elem, video);
+        }
     };
 
     document.getElementById('cancel_it').onclick = function() {
         var videoImg = document.getElementById('video_img');
         var done_img = document.getElementById('done_img');
+        var photo_item = document.getElementById('photo');
 
         if (videoImg) {
             videoImg.parentElement.removeChild(videoImg);
@@ -141,6 +178,15 @@
         }
         document.getElementById('save_it').style.display = "none";
         document.getElementById('cancel_it').style.display = "none";
+        var cmp = photo_item.getAttribute('src').localeCompare('./photo/avatar/user_avatar.png');
+        if (cmp != 0) {
+            var src = photo_item.getAttribute('src');
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.open("POST", "./components/photoDelete.php", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send("src=" + src);
+        }
         document.getElementById('photo').setAttribute("src", "./photo/avatar/user_avatar.png");
     };
 
@@ -148,11 +194,17 @@
         var srcPng = document.getElementById('done_img').getAttribute("src");
         var srcPhoto = document.getElementById('photo').getAttribute("src");
         var xmlhttp = new XMLHttpRequest();
-
+          alert(srcPhoto);
         xmlhttp.open("POST", "./components/photoMerge.php", true);
         xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xmlhttp.send("src_png=" + srcPng + "&src_photo=" + srcPhoto);
-        location.reload(true);
+        document.body.style.cursor = "wait";
+        document.getElementById('save_it').style.cursor = "wait";
+        setTimeout(function() {
+            location.reload(true);
+            document.body.style.cursor = "default";
+            document.getElementById('save_it').style.cursor = "pointer";
+        }, 1000);
     };
 
     function deletePhoto(photo) {
