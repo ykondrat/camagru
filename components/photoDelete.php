@@ -4,7 +4,7 @@
     $png = $_POST['src'];
 
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "");
+        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "sarkazm1312");
     } catch (PDOException $e) {
         echo "Connection error :". $e->getMessage();
         exit();

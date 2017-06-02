@@ -194,14 +194,14 @@
         var srcPng = document.getElementById('done_img').getAttribute("src");
         var srcPhoto = document.getElementById('photo').getAttribute("src");
         var xmlhttp = new XMLHttpRequest();
-          alert(srcPhoto);
+
         xmlhttp.open("POST", "./components/photoMerge.php", true);
         xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xmlhttp.send("src_png=" + srcPng + "&src_photo=" + srcPhoto);
         document.body.style.cursor = "wait";
         document.getElementById('save_it').style.cursor = "wait";
         setTimeout(function() {
-            location.reload(true);
+            location.href = location.href;
             document.body.style.cursor = "default";
             document.getElementById('save_it').style.cursor = "pointer";
         }, 1000);

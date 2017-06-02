@@ -70,3 +70,16 @@ function wrongSize() {
     div.innerHTML = "Sorry, your file is too large.";
     insert.insertBefore(div, insert.firstChild);
 }
+
+function wrongFormatPhoto() {
+    var elem = document.getElementsByClassName("error_div")[0];
+    var insert = document.getElementsByClassName('container')[0];
+    var div = document.createElement("div");
+
+    if (elem) {
+        elem.parentElement.removeChild(elem);
+    }
+    div.className = "error_div";
+    div.innerHTML = "Wrong format of photo. Use only .png";
+    insert.insertBefore(div, insert.firstChild);
+}

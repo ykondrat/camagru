@@ -54,7 +54,7 @@
                     if ($result_login[0]['password'] == hash('whirlpool', $password)) {
                         if ($result_login[0]['activation'] == "1") {
                             $_SESSION['logged_user'] = $login;
-                            header("Location: http://localhost/camagru");
+                            header("Location: http://localhost:8080/camagru");
                         } else {
                             $_SESSION['error'] = "error3";
                         }
@@ -113,7 +113,7 @@
         public static function logOut() {
             $_SESSION['logged_user'] = "";
             session_destroy();
-            header("Location: http://localhost/camagru");
+            header("Location: http://localhost:8080/camagru");
         }
 
         public static function modifyAccount() {
@@ -221,7 +221,7 @@
             $r1 = "<html><head><style>.button { background-color: #646464; border: none;color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;}</style><head>";
             $r2 = "<body><h1>Camagru Account Activation</h1>";
             $r3 = "<article><p>Hi, {$name} {$surname}!</p><p>Thanks for registration on <span>Camagru<span></p><p>To activate your account on site please click on button below</p>";
-            $r4 = "<a href='http://localhost/camagru/activation/{$login}/{$activation}' class='button'>Activate</a></article>";
+            $r4 = "<a href='http://localhost:8080/camagru/activation/{$login}/{$activation}' class='button'>Activate</a></article>";
             $r5 = "<p>Best regards, Camagru Dev</p></body></html>";
             $message = $r1.$r2.$r3.$r4.$r5;
 
@@ -246,6 +246,6 @@
                     $_SESSION['activation'] = "5";
                 }
             }
-            header("Location: http://localhost/camagru");
+            header("Location: http://localhost:8080/camagru");
         }
     }

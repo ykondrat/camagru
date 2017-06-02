@@ -3,6 +3,7 @@
 
     if ($_SESSION['logged_user'] != "") {
         ?>
+        <div class="container">
         <div class="room">
             <video id="video" autoplay></video>
             <button id="take_it" class="btn-modify">Take photo</button>
@@ -42,9 +43,10 @@
                 <img src="./png/leo.png" alt="vader" id="leo" class="item_png"/>
                 <img src="./png/wars.png" alt="wars" id="wars" class="item_png"/>
             </div>
-            <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" name="photoToUpload" id="photoToUpload"/>
-                    <input type="submit" name="set_photo" value="Send" id="sendPhoto"/>
+            <form action="" method="post" enctype="multipart/form-data" class="photo_form">
+                <div class="photo_p">If you don't have Web camera you may upload png file.</div>
+                <input type="file" name="photoToUpload" id="photoToUpload"/>
+                <input type="submit" name="set_photo" value="Send" id="sendPhoto"/>
             </form>
         </div>
         <div class="photo_div">
@@ -57,17 +59,19 @@
                 $query->execute();
                 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-                $n = count($result);
-                for ($i = 0; $i < $n; $i++) {
-                    $src = $result[$i]['path'];
+                $n = count($result) - 1;
+                for ($i = 0 ; $n >= 0; $n--) {
+                    $src = $result[$n]['path'];
                     if ($src != "./photo/".$login."/".$login.".png") {
                         echo "<img src='$src' alt='user photo' class='user_photo' onclick='deletePhoto(this)'>";
                         if ($i % 2 != 0) {
                             echo "<br>";
                         }
                     }
+                    $i++;
                 }
             ?>
+        </div>
         </div>
         <script src="./js/takePhoto.js" language="JavaScript"></script>
         <?php

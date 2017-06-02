@@ -65,3 +65,9 @@ footer {
     font-weight: bold;
     padding-right: 5px;
 }
+.photo_gallery {
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    margin-right: 10px;
+}

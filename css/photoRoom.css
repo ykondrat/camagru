@@ -5,12 +5,10 @@
     float: left;
 }
 .photo_div {
-    /*position: absolute;*/
-    width: 40%;
-    /*left: 650px;*/
-    /*top: 10px;*/
+    width: 45%;
+    height: 650px;
+    overflow-y: scroll;
     float: left;
-    /*display: inline-block;*/
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -28,7 +26,10 @@
     display: none;
     margin-left: 0;
 }
-
+#photo {
+    width: 400px;
+    height: 300px;
+}
 #canvas {
     display: none;
 }
@@ -66,4 +67,34 @@
     left: 300px;
     width: 200px;
     height: 200px;
+}
+.photo_form {
+    margin-top: 10px;
+}
+.photo_p {
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+    float: left;
+}
+.photo_form input[type='file'] {
+    font-family: 'Play', sans-serif;
+    background: #909090;
+}
+.photo_form input[type="submit"] {
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    color: #FFF;
+    margin: 5px auto;
+    background: #646464;
+    text-align: center;
+    font-style: normal;
+    border-radius: 24px 24px 24px 24px;
+    -moz-border-radius: 24px 24px 24px 24px;
+    -webkit-border-radius: 24px 24px 24px 24px;
+    border: none;
+}
+.photo_form input[type="submit"]:hover {
+    cursor: pointer;
+    background: #909090;
 }

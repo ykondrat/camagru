@@ -58,11 +58,6 @@
         width: 200px;
         height: 150px;
     }
-    /*.user_photo {*/
-        /*width: 100px;*/
-        /*height: 75px;*/
-    /*}*/
-
 }
 @media only screen and (max-width: 1024px) {
     .user_photo {

@@ -39,6 +39,10 @@
         echo "<script>wrongSize()</script>";
         $_SESSION['error'] = "";
     }
+    if ($_SESSION['error'] == "error10") {
+        echo "<script>wrongFormatPhoto()</script>";
+        $_SESSION['error'] = "";
+    }
     if ($_SESSION['activation'] == "0") {
         echo "<script>sendEmail()</script>";
         $_SESSION['activation'] = "";

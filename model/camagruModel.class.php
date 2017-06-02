@@ -89,8 +89,6 @@
         public static function uploadPhoto() {
             if (isset($_POST['set_photo'])) {
                 if ($_POST['set_photo'] == "Send") {
-                    $queryPath = ROOT.'/config/querySQL.php';
-                    $querySQL = include($queryPath);
 
                     $pdo = DataBase::getConnection();
                     DataBase::createTable('photo');
@@ -107,7 +105,7 @@
                     $query->execute();
                     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-                    if ($type[$len] == "jpg" || $type[$len] == "png" || $type[$len] == "jpeg" || $type[$len] == "gif") {
+                    if ($type[$len] == "png") {
                         if ($_FILES["photoToUpload"]["size"] <= 500000) {
                             if ($result == NULL) {
                                 $query = $pdo->prepare("INSERT INTO `photo_user` (login, path) VALUES (?, ?)");
@@ -129,7 +127,7 @@
                             $_SESSION['error'] = "error9";
                         }
                     } else {
-                        $_SESSION['error'] = "error8";
+                        $_SESSION['error'] = "error10";
                     }
                 }
             }
