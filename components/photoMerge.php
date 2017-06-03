@@ -9,7 +9,7 @@
         mkdir($dir, 0777, true);
     }
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "sarkazm1312");
+        $pdo = new PDO("mysql:host=localhost;dbname=camagru", "root", "1234");
     } catch (PDOException $e) {
         echo "Connection error :". $e->getMessage();
         exit();

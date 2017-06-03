@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./css/modifyForm.css" />
     <link rel="stylesheet" href="./css/modal.css" />
     <link rel="stylesheet" href="./css/photoRoom.css" />
+    <link rel="stylesheet" href="./css/openPhoto.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
     <title>Camagru</title>
 </head>

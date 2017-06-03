@@ -72,6 +72,10 @@
     .photo_div {
         width: 15%;
     }
+    .photo_gallery {
+        width: 150px;
+        height: 115px;
+    }
 }
 @media only screen and (max-width: 425px) {
     .photo_div {

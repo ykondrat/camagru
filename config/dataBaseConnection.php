@@ -3,7 +3,7 @@
         'host' => 'localhost',
         'dbname' => 'camagru',
         'user' => 'root',
-        'password' => 'sarkazm1312',
+        'password' => '1234',
     );
 
     return ($dataBaseConnection);

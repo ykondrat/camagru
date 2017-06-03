@@ -10,6 +10,7 @@
 <script src="./js/accountModify.js" language="JavaScript"></script>
 <script src="./js/modifyValidation.js" language="JavaScript"></script>
 <script src="./js/modalWindow.js" language="JavaScript"></script>
+<script src="./js/openPhoto.js" language="JavaScript"></script>
 <?php
     require_once (ROOT.'/config/scriptInclude.php');
 ?>
