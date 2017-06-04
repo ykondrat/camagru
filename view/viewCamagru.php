@@ -1,6 +1,9 @@
 <?php
     require_once (ROOT.'/view/viewHeader.php');
 ?>
+    <div class="header_gallery">
+        <h1>Camagru Gallery</h1>
+    </div>
     <div class="container">
         <script>
             var xmlhttp = new XMLHttpRequest();
@@ -63,6 +66,7 @@
                                     var img = document.createElement('img');
                                     img.setAttribute('src', photoArray[index][z]);
                                     img.className = "photo_gallery";
+                                    img.setAttribute("onclick", "openPhoto(this)");
                                     insert.insertBefore(img, insert.firstChild);
 
                                     if (z == 2 || z == 5 || z == 8) {

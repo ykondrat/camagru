@@ -2,7 +2,6 @@ var modalForm = document.getElementById('modal');
 var modalController = document.getElementById('modal_controller');
 var avatarForm = document.getElementById('upload');
 var avatarController = document.getElementById('avatar');
-var modalPhoto = document.getElementById('modal_photo');
 
 if (modalController) {
     modalController.onclick = function () {
@@ -30,8 +29,5 @@ window.onclick = function(event) {
     }
     if (event.target == avatarForm) {
         avatarForm.style.display = "none";
-    }
-    if (event.target == modalPhoto) {
-        modalPhoto.style.display = "none";
     }
 };
