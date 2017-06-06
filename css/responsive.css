@@ -76,6 +76,16 @@
         width: 150px;
         height: 115px;
     }
+    .modal_form_img {
+        max-width: 250px;
+    }
+    .open_img {
+        width: 200px;
+        height: 150px;
+    }
+    #textarea {
+        max-width: 200px;
+    }
 }
 @media only screen and (max-width: 425px) {
     .photo_div {

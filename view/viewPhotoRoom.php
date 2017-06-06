@@ -44,7 +44,7 @@
                 <img src="./png/wars.png" alt="wars" id="wars" class="item_png"/>
             </div>
             <form action="" method="post" enctype="multipart/form-data" class="photo_form">
-                <div class="photo_p">If you don't have Web camera you may upload png file.</div>
+                <div class="photo_p">If you don't have Web camera you may upload <strong>png file.</strong></div>
                 <input type="file" name="photoToUpload" id="photoToUpload"/>
                 <input type="submit" name="set_photo" value="Send" id="sendPhoto"/>
             </form>

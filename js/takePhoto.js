@@ -94,7 +94,6 @@
             insertAfter(elem, video);
         }
     };
-
     leo.onclick = function (){
         var elem = document.createElement('img');
         var video = document.getElementById('video');
@@ -129,8 +128,6 @@
             insertAfter(elem, video);
         }
     };
-
-
     wars.onclick = function (){
         var elem = document.createElement('img');
         var video = document.getElementById('video');
@@ -164,7 +161,6 @@
             insertAfter(elem, video);
         }
     };
-
     document.getElementById('cancel_it').onclick = function() {
         var videoImg = document.getElementById('video_img');
         var done_img = document.getElementById('done_img');
@@ -189,7 +185,6 @@
         }
         document.getElementById('photo').setAttribute("src", "./photo/avatar/user_avatar.png");
     };
-
     document.getElementById('save_it').onclick = function() {
         var srcPng = document.getElementById('done_img').getAttribute("src");
         var srcPhoto = document.getElementById('photo').getAttribute("src");
@@ -208,12 +203,16 @@
     };
 
     function deletePhoto(photo) {
-        var src = photo.getAttribute("src");
+        var question = "Do you really want to delete photo?";
+        var result = confirm(question);
+        if (result) {
+            var src = photo.getAttribute("src");
 
-        var xmlhttp = new XMLHttpRequest();
+            var xmlhttp = new XMLHttpRequest();
 
-        xmlhttp.open("POST", "./components/photoDelete.php", true);
-        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xmlhttp.send("src=" + src);
-        location.reload(true);
+            xmlhttp.open("POST", "./components/photoDelete.php", true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send("src=" + src);
+            location.reload(true);
+        }
     }

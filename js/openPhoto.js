@@ -1,6 +1,4 @@
-/**
- * Created by ykondrat on 6/3/17.
- */
+var user = "";
 
 function insertAfter(elem, refElem) {
     var parent = refElem.parentNode;
@@ -13,45 +11,74 @@ function insertAfter(elem, refElem) {
     }
 }
 
+function getLoggedUser() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "./components/getUser.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = JSON.parse(xmlhttp.responseText);
+
+            user = result[0];
+        }
+    }
+}
+getLoggedUser();
 function openPhoto(photo) {
     var deleteDiv = document.getElementById('modal_photo');
     if (deleteDiv) {
         deleteDiv.parentElement.removeChild(deleteDiv);
     }
+
     var src = photo.getAttribute('src');
     var modalDiv = document.createElement('div');
+
     modalDiv.className = "modal_window_img";
     modalDiv.id = "modal_photo";
+
     var imgClose = document.createElement('img');
     imgClose.className = "img_close";
     imgClose.setAttribute("src", "./png/x.png");
     imgClose.setAttribute("onclick", "closeImg()");
+
     document.body.insertBefore(modalDiv, document.body.firstChild);
+
     var insertDiv = document.createElement('div');
     insertDiv.className = "modal_form_img";
     modalDiv.insertBefore(insertDiv, modalDiv.lastChild);
+
     var img = document.createElement('img');
     img.setAttribute("src", src);
     img.className = "open_img";
     insertDiv.insertBefore(img, insertDiv.lastChild);
+
     var i = document.createElement('i');
     var br = document.createElement('br');
     var br2 = document.createElement('br');
     i.className = "fa fa-thumbs-up";
     i.id = "likePhotoId";
     i.setAttribute('aria-hidden', 'true');
-    i.setAttribute('onclick', 'sendLike()');
+    if (user) {
+        i.setAttribute('onclick', 'sendLike()');
+    }
     insertAfter(br2, img);
     insertAfter(i, br2);
+
     var textarea = document.createElement('textarea');
     textarea.setAttribute("rows", "4");
-    textarea.setAttribute("cols", "50");
+    textarea.setAttribute("cols", "40");
     textarea.id = "textareaId";
     var button = document.createElement('button');
     button.innerText = "Send Comment";
     button.id = "buttonID";
     button.setAttribute('onclick', 'sendComment()');
     insertAfter(br, i);
+    if (!user) {
+        textarea.setAttribute('disabled', true);
+    }
     insertAfter(textarea, br);
     insertAfter(button, textarea);
     var divComment = document.createElement('div');

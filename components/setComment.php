@@ -28,4 +28,23 @@
     $str = array();
     $str[] = $login."|^|".$today."|^|".$comment;
 
+    $user_name = explode("/", $path);
+    $user_name = $user_name[2];
+
+    $query = $pdo->prepare("SELECT email FROM `users` WHERE login='$user_name'");
+    $query->execute();
+    $email = $query->fetch(PDO::FETCH_ASSOC);
+    $email = $email['email'];
+
+    $headers = "Content-Type: text/html; charset=utf-8"."\r\n";
+    $subject = "Camagru";
+    $r1 = "<html><head><style>.button { background-color: #646464; border: none;color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;}</style><head>";
+    $r2 = "<body><h1>Hi, someone commented your photo</h1>";
+    $r3 = "<article>This perfect button redirect you on Camagru site</p>";
+    $r4 = "<a href='http://localhost:8080/camagru/' class='button'>Go to Camagru</a></article>";
+    $r5 = "<p>Best regards, Camagru Dev</p></body></html>";
+    $message = $r1.$r2.$r3.$r4.$r5;
+
+    mail($email, $subject, $message, $headers);
+
     echo json_encode($str);
