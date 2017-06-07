@@ -6,7 +6,8 @@ body {
     background: url(../img/background.png) repeat;
 }
 h1, h2 {
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     font-weight: bold;
     text-align: center;
     margin-left: auto;
@@ -36,11 +37,13 @@ h1, h2 {
 }
 #nick_name {
     margin-left: 40px;
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     font-weight: bold;
 }
 footer {
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     text-align: right;
     position: absolute;
     left: 0;
@@ -49,7 +52,8 @@ footer {
     height: 30px;
 }
 .about {
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     padding-top: 10px;
 }
 .about h1 {
@@ -87,7 +91,6 @@ footer {
     padding: 5px 5px;
     margin-top: 30px;
     margin-right: 5px;
-    /*background-color: #404040;*/
     border: none;
     border-radius: 4px;
 }

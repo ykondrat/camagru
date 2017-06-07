@@ -26,7 +26,28 @@ function getLoggedUser() {
         }
     }
 }
+
+function getLikes(src) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("POST", "./components/getLikes.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send('src=' + src);
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var result = JSON.parse(xmlhttp.responseText);
+            var insert = document.getElementById('likePhotoId');
+
+            if (result.length) {
+                insert.innerText = " " + result.length;
+            }
+        }
+    }
+}
+
 getLoggedUser();
+
 function openPhoto(photo) {
     var deleteDiv = document.getElementById('modal_photo');
     if (deleteDiv) {
@@ -64,6 +85,7 @@ function openPhoto(photo) {
     if (user) {
         i.setAttribute('onclick', 'sendLike()');
     }
+    getLikes(src);
     insertAfter(br2, img);
     insertAfter(i, br2);
 

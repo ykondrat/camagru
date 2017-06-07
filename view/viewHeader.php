@@ -21,6 +21,7 @@
     <meta name="author" content="ykondrat" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play" />
     <link rel="stylesheet" href="./css/app.css" />
     <link rel="stylesheet" href="./css/menuStyle.css" />
@@ -41,18 +42,18 @@
             }
         ?>
         <ul class="menu">
-            <li class="menu_list"><a href="http://localhost:8080/camagru"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span>&nbsp; Home</span></a></li>
+            <a href="/camagru" class="menu_href"><li class="menu_list"><i class="fa fa-home fa-2x" aria-hidden="true"></i><span>&nbsp; Home</span></li></a>
             <?php
                 if ($_SESSION['logged_user'] === "") {
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/sign_up'><i class=\"fa fa-user-plus fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign Up</span></a></li>";
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/login'><i class=\"fa fa-sign-in fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign In</span></a></li>";
+                    echo "<a href='/camagru/sign_up' class=\"menu_href\"><li class=\"menu_list\"><i class=\"fa fa-user-plus fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign Up</span></li></a>";
+                    echo "<a href='/camagru/login' class=\"menu_href\"><li class=\"menu_list\"><i class=\"fa fa-sign-in fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Sign In</span></li></a>";
                 } else {
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/modify'><i class=\"fa fa-user-circle-o fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Modify Account</span></a></li>";
-                    echo "<li class=\"menu_list\"><a href='http://localhost:8080/camagru/logout'><i class=\"fa fa-sign-out fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Log Out</span></a></li>";
+                    echo "<a href='/camagru/modify' class=\"menu_href\"><li class=\"menu_list\"><i class=\"fa fa-user-circle-o fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Modify Account</span></li></a>";
+                    echo "<a href='/camagru/logout' class=\"menu_href\"><li class=\"menu_list\"><i class=\"fa fa-sign-out fa-2x\" aria-hidden=\"true\"></i><span>&nbsp; Log Out</span></li></a>";
                 }
             ?>
-            <li class="menu_list"><a href="http://localhost:8080/camagru/photo_room"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i><span>&nbsp; Photo Room</span></a></li>
-            <li class="menu_list"><a href="http://localhost:8080/camagru/about"><i class="fa fa-book fa-2x" aria-hidden="true"></i><span>&nbsp; About</span></a></li>
+            <a href="/camagru/photo_room" class="menu_href"><li class="menu_list"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i><span>&nbsp; Photo Room</span></li></a>
+            <a href="/camagru/about" class="menu_href"><li class="menu_list"><i class="fa fa-book fa-2x" aria-hidden="true"></i><span>&nbsp; About</span></li></a>
         </ul>
     </nav>
     <div id="upload" class="modal_window">

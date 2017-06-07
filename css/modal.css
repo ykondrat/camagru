@@ -1,6 +1,7 @@
 #modal_controller {
     margin-top: 20px;
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     font-weight: bold;
     font-size: 18px;
     color: #646464;
@@ -36,7 +37,8 @@
     min-width: 300px;
 }
 .modal_form fieldset{
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     font-weight: bold;
     padding-left: 10px;
     border: none;
@@ -49,7 +51,8 @@
 }
 .modal_form input[type="email"],
 .modal_form input[type="file"] {
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     background: #909090;
     border: none;
     border-radius: 4px;
@@ -66,7 +69,8 @@
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 }
 .modal_form input[type="submit"] {
-    font-family: 'Play', sans-serif;
+    /*font-family: 'Play', sans-serif;*/
+    font-family: 'Oxygen', sans-serif;
     font-weight: bold;
     position: relative;
     padding: 19px 39px 18px 39px;
