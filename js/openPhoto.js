@@ -173,6 +173,7 @@ function sendLike() {
 function sendComment() {
     var xmlhttp = new XMLHttpRequest();
     var comment = document.getElementById('textareaId').value;
+    comment = comment.trim();
 
     if (comment) {
         var src = document.getElementsByClassName('open_img')[0].getAttribute('src');

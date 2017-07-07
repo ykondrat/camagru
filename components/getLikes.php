@@ -15,12 +15,8 @@
     $query->execute();
     $result = $query->fetchAll();
 
-//    if ($result == NULL) {
-//        $arr[] = "0";
-//    } else {
-        foreach ($result as $elem) {
-            $arr[] = $elem['path'];
-        }
-    //}
+    foreach ($result as $elem) {
+        $arr[] = $elem['path'];
+    }
 
     echo json_encode($arr);

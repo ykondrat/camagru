@@ -1,9 +1,9 @@
 var insert = document.getElementsByTagName('legend')[1];
 
 function formValidationSignUp() {
-    var login = document.forms["SignUp"]["login"].value;
-    var name = document.forms["SignUp"]["u_name"].value;
-    var surname = document.forms["SignUp"]["surname"].value;
+    var login = document.forms["SignUp"]["login"].value.trim();
+    var name = document.forms["SignUp"]["u_name"].value.trim();
+    var surname = document.forms["SignUp"]["surname"].value.trim();
     var email = document.forms["SignUp"]["email"].value;
     var password = document.forms["SignUp"]["password"].value;
     var repeatPassword = document.forms["SignUp"]["repeat_password"].value;
@@ -23,28 +23,32 @@ function formValidationSignUp() {
 
         return (false);
     }
-    if (name.length <= 0) {
+    if (name.length < 1) {
         div.className = "error_div";
         div.innerHTML = "Please provide your name";
         insert.insertBefore(div, insert.firstChild);
+
         return (false);
     }
-    if (surname.length <= 0) {
+    if (surname.length < 1) {
         div.className = "error_div";
         div.innerHTML = "Please provide your surname";
         insert.insertBefore(div, insert.firstChild);
+
         return (false);
     }
     if (!filter.test(email)) {
         div.className = "error_div";
         div.innerHTML = "Please provide a valid email address";
         insert.insertBefore(div, insert.firstChild);
+
         return (false);
     }
     if (!filterPassword.test(password)) {
         div.className = "error_div";
         div.innerHTML = "Password must include minimum 8 symbols at least 1 uppercase alphabet, 1 lowercase alphabet and 1 number";
         insert.insertBefore(div, insert.firstChild);
+
         return (false);
     }
     if (cmp != 0) {
@@ -54,6 +58,7 @@ function formValidationSignUp() {
         div.className = "error_div";
         div.innerHTML = "Please provide a valid password";
         insert.insertBefore(div, insert.firstChild);
+
         return (false);
     }
     return (true);

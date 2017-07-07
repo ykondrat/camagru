@@ -139,6 +139,10 @@
                             if ($result == NULL) {
                                 $query = $pdo->prepare("UPDATE `users` SET login='$new_login' WHERE login = '$login'");
                                 $query->execute();
+                                $query = $pdo->prepare("UPDATE `photo_user` SET login='$new_login' WHERE login = '$login'");
+                                $query->execute();
+                                $query = $pdo->prepare("UPDATE `avatar` SET login='$new_login' WHERE login = '$login'");
+                                $query->execute();
                                 $_SESSION['logged_user'] = $new_login;
                                 $_SESSION['activation'] = "2";
                             } else {

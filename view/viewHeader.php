@@ -20,6 +20,7 @@
     <meta charset="UTF-8" />
     <meta name="author" content="ykondrat" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://signin.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png' rel='icon' type='image/svg' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play" />
@@ -57,7 +58,7 @@
         </ul>
     </nav>
     <div id="upload" class="modal_window">
-        <form class="modal_form" action="" method="post" enctype="multipart/form-data">
+        <form class="modal_form" method="post" enctype="multipart/form-data">
             <fieldset>
                 <legend>Upload your avatar</legend>
                 <input type="file" name="fileToUpload" id="fileToUpload"/>

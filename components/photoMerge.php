@@ -15,7 +15,7 @@
         exit();
     }
 
-    $queryCreate = "CREATE TABLE IF NOT EXISTS `photo_user` (photo_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, login VARCHAR(16) NOT NULL, path VARCHAR(50) NOT NULL)";
+    $queryCreate = "CREATE TABLE IF NOT EXISTS `photo_user` (photo_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, login VARCHAR(16) NOT NULL, path VARCHAR(50))";
     try {
         $pdo->query($queryCreate);
     } catch (PDOException $e) {

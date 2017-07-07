@@ -99,6 +99,11 @@
                     $len = count($type) - 1;
                     $_FILES["photoToUpload"]["name"] = $login.".png";
                     $target_file = $target_dir.basename($_FILES["photoToUpload"]["name"]);
+                    $dir = "./photo/$login";
+
+                    if (!file_exists($dir)) {
+                        mkdir($dir, 0777, true);
+                    }
                     $path = './photo/'.$login.'/'.$_FILES["photoToUpload"]["name"];
 
                     $query = $pdo->prepare("SELECT * FROM `photo_user` WHERE path = '$path'");
