@@ -23,32 +23,32 @@ To run this project you need to have some local server. On Mac I use ```MAMP``` 
 
 > Login page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/login.png)
 
 > Gallery page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/gallery.png)
 
 > Create account page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/create.png)
 
 > Modify account page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/modify.png)
 
-> MOdify login page
+> Modify login page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/modify_login.png)
 
 > About page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/about.png)
 
 > Photo room page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/photo_room.png)
 
 > Light-box page
 
-![N|Solid]()
+![N|Solid](https://raw.githubusercontent.com/ykondrat/camagru/master/screen/open_photo.png)
