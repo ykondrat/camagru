@@ -7,6 +7,7 @@ be mixing both pictures.
 All captured images is public, likeables and commentable.
 
 **User features**
+
 • The application allow a user to sign up by asking at least for an email, a password with at least a minimum level of complexity. At the end of the sign-up process application sent to the user in order to validate the sign-up process.
 
 • User also able to receive an email for resetting his password in case he
@@ -15,6 +16,7 @@ forgot it.
 • The user able to disconnect in one click at any time on any page.
 
 **Gallery features**
+
 • This part is public and display all the images edited by all the users, ordered by date of creation. It also allow (only) a connected user to like them and/or comment them.
 
 • When an image receives a new comment, the author of the image notified by email.
